@@ -16,7 +16,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.6";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "grpcio_status";
+    inherit version;
     hash = "sha256-xQvRTrZQbYWApsVTvqRj18CEmbLA6T9tGGTF6Oq7EGY=";
   };
 
