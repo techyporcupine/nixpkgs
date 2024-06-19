@@ -8,8 +8,9 @@
   setuptools-scm,
   shtab,
   importlib-metadata,
-  dbus-python,
   jaraco-classes,
+  jaraco-context,
+  jaraco-functools,
   jeepney,
   secretstorage,
   pytestCheckHook,
@@ -33,7 +34,11 @@ buildPythonPackage rec {
   ];
 
   propagatedBuildInputs =
-    [ jaraco-classes ]
+    [
+      jaraco-classes
+      jaraco-context
+      jaraco-functools
+    ]
     ++ lib.optionals stdenv.isLinux [
       jeepney
       secretstorage
