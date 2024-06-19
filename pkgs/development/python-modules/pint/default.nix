@@ -22,7 +22,7 @@
 
 buildPythonPackage rec {
   pname = "pint";
-  version = "0.23";
+  version = "0.24";
   format = "pyproject";
 
   disabled = pythonOlder "3.6";
@@ -30,7 +30,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     inherit version;
     pname = "Pint";
-    hash = "sha256-4VCbkWBtvFJSfGAKTvdP+sEv/3Boiv8g6QckCTRuybQ=";
+    hash = "sha256-xsfAJ7ghQT2xrEazt70pZZKEi1rsKaiM/G43j9E3GQM=";
   };
 
   nativeBuildInputs = [
