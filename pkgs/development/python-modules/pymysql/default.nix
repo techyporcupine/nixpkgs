@@ -12,8 +12,7 @@ buildPythonPackage rec {
   pyproject = true;
 
   src = fetchPypi {
-    pname = "PyMySQL";
-    inherit version;
+    inherit pname version;
     hash = "sha256-4SdhGq8rQXQDxgv03FcBJK60pX9fN7jpWuOZpC+QTNA=";
   };
 
