@@ -34,7 +34,7 @@ in
 buildPythonPackage rec {
   # Using an untagged version, with numpy 1.25 support, when it's released
   # also drop the versioneer patch in postPatch
-  version = "0.59.1";
+  version = "0.60.0";
   pname = "numba";
   pyproject = true;
 
@@ -56,7 +56,7 @@ buildPythonPackage rec {
     # use `forceFetchGit = true;`.` If in the future we'll observe the hash
     # changes too often, we can always use forceFetchGit, and inject the
     # relevant strings ourselves, using `sed` commands, in extraPostFetch.
-    hash = "sha256-4udpgLLHbHNtxPiYVkj+gxAjTWV3ClZOv98Y313/qbc=";
+    hash = "sha256-hUL281wHLA7wo8umzBNhiGJikyIF2loCzjLECuC+pO0=";
   };
 
   postPatch = ''
