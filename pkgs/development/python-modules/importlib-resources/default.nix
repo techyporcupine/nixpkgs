@@ -16,6 +16,7 @@
 
   # tests
   jaraco-collections,
+  jaraco-test,
   pytestCheckHook,
 }:
 
@@ -42,6 +43,7 @@ buildPythonPackage rec {
   nativeCheckInputs = [
     pytestCheckHook
     jaraco-collections
+    jaraco-test
   ];
 
   pythonImportsCheck = [ "importlib_resources" ];
