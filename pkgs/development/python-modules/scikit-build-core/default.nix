@@ -73,6 +73,7 @@ buildPythonPackage rec {
   disabledTestPaths = [
     # runs pip, requires network access
     "tests/test_custom_modules.py"
+    "tests/test_hatchling.py"
     "tests/test_pyproject_pep517.py"
     "tests/test_pyproject_pep518.py"
     "tests/test_pyproject_pep660.py"
