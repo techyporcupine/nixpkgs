@@ -21,14 +21,18 @@ buildPythonPackage rec {
     hash = "sha256-krlI7WimBluzkw3MVtGeotK5NFf+gsaUfL4CfhNPfpE=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     setuptools
     wheel
   ];
 
-  propagatedBuildInputs = [ stevedore ];
+  dependencies = [ stevedore ];
 
   nativeCheckInputs = [ pytestCheckHook ];
+
+  preCheck = ''
+    export HOME=$TMPDIR
+  '';
 
   pythonImportsCheck = [ "plugin.core" ];
 
