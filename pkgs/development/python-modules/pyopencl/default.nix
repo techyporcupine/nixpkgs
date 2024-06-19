@@ -26,12 +26,12 @@ let
 in
 buildPythonPackage rec {
   pname = "pyopencl";
-  version = "2024.1";
+  version = "2024.2.6";
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-7NVy7pQK2L2hY5w6e+tog0/JqYrX6z9uAarE99nUusE=";
+    hash = "sha256-zrm+7vC2Fi5gHAWSL+3im1CUVUpm60c8YQyrwUMIuoI=";
   };
 
   nativeBuildInputs = [
