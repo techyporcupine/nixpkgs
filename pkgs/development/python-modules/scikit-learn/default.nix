@@ -7,10 +7,9 @@
   # build-system
   cython,
   gfortran,
+  meson-python,
   numpy,
   scipy,
-  setuptools,
-  wheel,
 
   # native dependencies
   glibcLocales,
@@ -31,14 +30,18 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.9";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "scikit_learn";
+    inherit version;
     hash = "sha256-eJ49sBx1DtbUlvott9UGN4V7RR5XvK6GO/9wfBJHvvc=";
   };
 
-  # Avoid build-system requirements causing failure
-  prePatch = ''
+  postPatch = ''
     substituteInPlace pyproject.toml \
-      --replace-fail "numpy==2.0.0rc1" "numpy"
+      --replace-fail "numpy>=2.0.0rc2" "numpy"
+
+    substituteInPlace meson.build --replace-fail \
+      "run_command('sklearn/_build_utils/version.py', check: true).stdout().strip()," \
+      "'${version}',"
   '';
 
   buildInputs = [
@@ -53,10 +56,9 @@ buildPythonPackage rec {
 
   build-system = [
     cython
+    meson-python
     numpy
     scipy
-    setuptools
-    wheel
   ];
 
   dependencies = [
