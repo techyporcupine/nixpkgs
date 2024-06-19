@@ -24,7 +24,7 @@ buildPythonPackage rec {
   version = "22.0.0";
   pyproject = true;
 
-  disabled = pythonOlder "3.5";
+  disabled = pythonOlder "3.3";
 
   src = fetchFromGitHub {
     owner = "benoitc";
@@ -34,8 +34,8 @@ buildPythonPackage rec {
   };
 
   postPatch = ''
-    substituteInPlace setup.cfg \
-      --replace "--cov=gunicorn --cov-report=xml" ""
+    substituteInPlace pyproject.toml \
+      --replace-fail "--cov=gunicorn --cov-report=xml" ""
   '';
 
   build-system = [ setuptools ];
