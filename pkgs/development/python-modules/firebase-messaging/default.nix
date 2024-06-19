@@ -1,5 +1,7 @@
 {
   lib,
+  aiohttp,
+  aioresponses,
   async-timeout,
   buildPythonPackage,
   cryptography,
@@ -9,9 +11,9 @@
   protobuf,
   pytest-asyncio,
   pytest-mock,
+  pytest-socket,
   pytestCheckHook,
   pythonOlder,
-  requests,
   requests-mock,
   sphinx,
   sphinx-autodoc-typehints,
@@ -44,10 +46,10 @@ buildPythonPackage rec {
   ] ++ passthru.optional-dependencies.docs;
 
   propagatedBuildInputs = [
+    aiohttp
     cryptography
     http-ece
     protobuf
-    requests
   ];
 
   passthru.optional-dependencies = {
@@ -61,10 +63,12 @@ buildPythonPackage rec {
   pythonImportsCheck = [ "firebase_messaging" ];
 
   nativeCheckInputs = [
+    aioresponses
     async-timeout
     requests-mock
     pytest-asyncio
     pytest-mock
+    pytest-socket
     pytestCheckHook
   ];
 
