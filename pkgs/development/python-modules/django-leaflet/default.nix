@@ -8,14 +8,14 @@
 
 buildPythonPackage rec {
   pname = "django-leaflet";
-  version = "0.29.1";
+  version = "0.30.1";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-ECtocPJHYR1DsFLeVMVdtlia4UNOJyNMsU1CrX1aVsQ=";
+    hash = "sha256-jsG2RcUe0Zob9GAZVKSIr8iPPubqqsh679uhUioNR0Y=";
   };
 
   propagatedBuildInputs = [ django ];
