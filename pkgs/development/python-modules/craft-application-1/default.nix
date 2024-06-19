@@ -18,7 +18,7 @@
 
 buildPythonPackage rec {
   pname = "craft-application-1";
-  version = "1.2.1";
+  version = "2.8.0";
 
   pyproject = true;
 
@@ -26,7 +26,7 @@ buildPythonPackage rec {
     owner = "canonical";
     repo = "craft-application";
     rev = "refs/tags/${version}";
-    hash = "sha256-CXZEWVoE66dlQJp4G8tinufjyaDJaH1Muxz/qd/81oA=";
+    hash = "sha256-COcZgl2XzPWknSKMUZgZBEMzkDdwK2PouIEuWKOP8dc=";
   };
 
   postPatch = ''
