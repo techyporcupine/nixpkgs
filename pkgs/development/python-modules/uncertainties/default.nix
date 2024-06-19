@@ -9,12 +9,12 @@
 
 buildPythonPackage rec {
   pname = "uncertainties";
-  version = "3.1.7";
+  version = "3.2.1";
   format = "setuptools";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-gBEeCDnyOcWyM8tHcgF7SDoLehVzpYG5Krd0ajXm+qs=";
+    hash = "sha256-sFQXtYve8jbCDnEfsv7hjk23NIqS7c7AExizKqs0kl4=";
   };
 
   propagatedBuildInputs = [ future ];
