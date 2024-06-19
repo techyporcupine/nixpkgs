@@ -4,6 +4,7 @@
   fetchFromGitHub,
   pythonOlder,
   setuptools-scm,
+  backports-tarfile,
 }:
 
 buildPythonPackage rec {
@@ -23,6 +24,8 @@ buildPythonPackage rec {
   pythonNamespaces = [ "jaraco" ];
 
   nativeBuildInputs = [ setuptools-scm ];
+
+  dependencies = lib.optionals (pythonOlder "3.12") [ backports-tarfile ];
 
   # Module has no tests
   doCheck = false;
