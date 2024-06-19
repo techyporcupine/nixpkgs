@@ -26,7 +26,7 @@
 
 buildPythonPackage rec {
   pname = "cherrypy";
-  version = "18.9.0";
+  version = "18.10.0";
   pyproject = true;
 
   disabled = pythonOlder "3.7";
@@ -34,7 +34,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     pname = "CherryPy";
     inherit version;
-    hash = "sha256-awbBkc5xqGRh8wVyoatX/8CfQxQ7qOQsEDx7M0ciDrE=";
+    hash = "sha256-bHDnjuETAOiyHAdnxUKuaxAqScrFz9Tj4xPXu5B8WJE=";
   };
 
   patches = [
