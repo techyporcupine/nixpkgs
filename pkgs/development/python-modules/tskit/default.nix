@@ -11,13 +11,13 @@
 
 buildPythonPackage rec {
   pname = "tskit";
-  version = "0.5.6";
+  version = "0.5.7";
   format = "pyproject";
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-3f4hPxywY822mCF3IwooBezX38fM1zAm4Th4q//SzkY=";
+    hash = "sha256-yD+2W1tzzi+5wFoZrqNe+jJLpWyx6ZILBgKivDE+wiM=";
   };
 
   nativeBuildInputs = [ setuptools-scm ];
