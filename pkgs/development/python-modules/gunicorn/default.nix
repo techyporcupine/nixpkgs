@@ -21,7 +21,7 @@
 
 buildPythonPackage rec {
   pname = "gunicorn";
-  version = "21.2.0";
+  version = "22.0.0";
   pyproject = true;
 
   disabled = pythonOlder "3.5";
@@ -29,8 +29,8 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "benoitc";
     repo = "gunicorn";
-    rev = version;
-    hash = "sha256-xP7NNKtz3KNrhcAc00ovLZRx2h6ZqHbwiFOpCiuwf98=";
+    rev = "refs/tags/${version}";
+    hash = "sha256-xIXQMAdTZEBORu6789tLpT1OpBL+aveL/MfDj4f4bes=";
   };
 
   postPatch = ''
