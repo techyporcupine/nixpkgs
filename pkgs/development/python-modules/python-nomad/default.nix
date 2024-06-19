@@ -8,14 +8,14 @@
 
 buildPythonPackage rec {
   pname = "python-nomad";
-  version = "2.0.0";
+  version = "2.0.1";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-5IyHNw1ArE8fU9DoSQMGkDI9d/OiR1YI/7nTPeFIK+A=";
+    hash = "sha256-TXCm6FxYoavjN3ASioQ7yXQVsDDXedDKBgGGP8ghQdM=";
   };
 
   propagatedBuildInputs = [ requests ];
