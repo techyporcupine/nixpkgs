@@ -15,13 +15,13 @@
 
 buildPythonPackage rec {
   pname = "brian2";
-  version = "2.6.0";
+  version = "2.7.0";
   format = "setuptools";
 
   src = fetchPypi {
     pname = "Brian2";
     inherit version;
-    hash = "sha256-qYeIMn8l2V2Ckpj5AY7TWihFnfZ//JcP5VacUUfYCf4=";
+    hash = "sha256-d9GDWp8CGIjeprWf4TtchVd36gmo36HBRkBOLaRXbpo=";
   };
 
   propagatedBuildInputs = [
