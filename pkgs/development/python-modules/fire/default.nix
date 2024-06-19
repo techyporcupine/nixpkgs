@@ -14,7 +14,7 @@
 
 buildPythonPackage rec {
   pname = "fire";
-  version = "0.5.0";
+  version = "0.6.0";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
@@ -23,7 +23,7 @@ buildPythonPackage rec {
     owner = "google";
     repo = "python-fire";
     rev = "refs/tags/v${version}";
-    hash = "sha256-cwY1RRNtpAn6LnBASQLTNf4XXSPnfhOa1WgglGEM2/s=";
+    hash = "sha256-tBmsy0MuJu0Ei+4lUy/XfKoOU+OuH4xqmjPv/uKVuwg=";
   };
 
   patches = [
