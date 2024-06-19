@@ -14,14 +14,14 @@
 
 buildPythonPackage rec {
   pname = "python-docx";
-  version = "1.1.0";
+  version = "1.1.2";
   pyproject = true;
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-WCm3IhQc8at5rt8MNNn+mSSyl2RYTA8hZOsrAtzfF8k=";
+    hash = "sha256-DPHyLpW5ACrdynlI4W8s16zf1JgEfxlByl0pPbd2Lv0=";
   };
 
   nativeBuildInputs = [ setuptools ];
