@@ -24,8 +24,7 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    pname = "Babel";
-    inherit version;
+    inherit pname version;
     hash = "sha256-ja8OJl0FdovGx6MUzxMh6aEjr8MozGNcGGIqLzCgRBM=";
   };
 
