@@ -22,14 +22,14 @@
 
 buildPythonPackage rec {
   pname = "sphinx-autoapi";
-  version = "3.0.0";
+  version = "3.1.1";
   format = "pyproject";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-CevWdKMrREZyIrD7ipF7l8iVI/INvwW1LLij8OFXFN4=";
+    hash = "sha256-tfbjxhzYbAzbfud6nVgMD9EWcmxbKc3LHx1fMKW8ob0=";
   };
 
   nativeBuildInputs = [ setuptools ];
