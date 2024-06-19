@@ -11,14 +11,14 @@
 
 buildPythonPackage rec {
   pname = "paho-mqtt";
-  version = "1.6.1";
+  version = "2.1.0";
   format = "setuptools";
 
   src = fetchFromGitHub {
     owner = "eclipse";
     repo = "paho.mqtt.python";
-    rev = "v${version}";
-    hash = "sha256-9nH6xROVpmI+iTKXfwv2Ar1PAmWbEunI3HO0pZyK6Rg=";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-VMq+WTW+njK34QUUTE6fR2j2OmHxVzR0wrC92zYb1rY=";
   };
 
   nativeCheckInputs = [
