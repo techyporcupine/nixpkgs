@@ -6,6 +6,7 @@
   arrow,
   six,
   hypothesis,
+  num2words,
   pytestCheckHook,
   pythonOlder,
 }:
@@ -32,6 +33,7 @@ buildPythonPackage rec {
   ];
 
   nativeCheckInputs = [
+    num2words
     pytestCheckHook
     hypothesis
   ];
