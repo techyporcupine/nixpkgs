@@ -4,6 +4,7 @@
   callPackage,
   pythonOlder,
   fetchPypi,
+  fetchpatch2,
   writeText,
 
   # build-system
@@ -37,6 +38,12 @@ buildPythonPackage rec {
     inherit pname version;
     hash = "sha256-3ku4EE4gGTnM3GiLJ6iae+IHmyLivSsH+Aa2unEReXc=";
   };
+
+  patches = [
+    # https://github.com/pytest-dev/pytest/issues/12424
+    # https://github.com/pytest-dev/pytest/pull/12436
+    ./8.2.2-unittest-testcase-regression.patch
+  ];
 
   outputs = [
     "out"
