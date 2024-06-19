@@ -17,7 +17,8 @@ let
     disabled = pythonOlder "3.7";
 
     src = fetchPypi {
-      inherit pname version;
+      pname = "trove_classifiers";
+      inherit version;
       hash = "sha256-imJCu7XJrojTTPZl6Bayh9IhKXPId336717BjXKsHQM=";
     };
 
