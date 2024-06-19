@@ -10,14 +10,14 @@
 
 buildPythonPackage rec {
   pname = "flask-session";
-  version = "0.5.0";
+  version = "0.8.0";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "pallets-eco";
     repo = "flask-session";
     rev = "refs/tags/${version}";
-    hash = "sha256-t8w6ZS4gBDpnnKvL3DLtn+rRLQNJbrT2Hxm4f3+a3Xc=";
+    hash = "sha256-QLtsM0MFgZbuLJPLc5/mUwyYc3bYxildNKNxOF8Z/3Y=";
   };
 
   nativeBuildInputs = [ flit-core ];
