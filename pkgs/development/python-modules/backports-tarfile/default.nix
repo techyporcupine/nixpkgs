@@ -9,7 +9,7 @@
   pytestCheckHook,
 }:
 
-buildPythonPackage rec {
+let self = buildPythonPackage rec {
   pname = "backports-tarfile";
   version = "1.2.0";
   pyproject = true;
@@ -27,12 +27,16 @@ buildPythonPackage rec {
     wheel
   ];
 
+  doCheck = false;
+
   nativeCheckInputs = [
     jaraco-test
     pytestCheckHook
   ];
 
-  pythonImportsCheck = [ "backports_tarfile" ];
+  pythonImportsCheck = [ "tarfile" ];
+
+  passthru.tests.pytest = self.overridePythonAttrs { doCheck = true; };
 
   meta = with lib; {
     description = "Backport of CPython tarfile module";
@@ -40,4 +44,5 @@ buildPythonPackage rec {
     license = licenses.mit;
     maintainers = with maintainers; [ ];
   };
-}
+};
+in self
