@@ -9,14 +9,14 @@
 
 buildPythonPackage rec {
   pname = "webcolors";
-  version = "1.13";
+  version = "24.6.0";
   format = "pyproject";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-wiW2dMg/qSO+k9I1MwzgMANz0CiFzvIyOIE7DVZoMEo=";
+    hash = "sha256-HRYNHeRrPoHljQooDQx4tGfcgPRylLkbGtgCnSzttVs=";
   };
 
   nativeBuildInputs = [ setuptools ];
