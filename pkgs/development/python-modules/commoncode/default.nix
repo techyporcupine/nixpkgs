@@ -18,14 +18,14 @@
 
 buildPythonPackage rec {
   pname = "commoncode";
-  version = "31.0.3";
+  version = "31.2.1";
   format = "pyproject";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-ura55/m/iesqN6kSYmdHB1sbthSHXaFWiQ76wVmyl0E=";
+    hash = "sha256-kHp15qZOFuGcQHLIDiQG2JvePc6/eZY9fsZXjsoiqIM=";
   };
 
   dontConfigure = true;
