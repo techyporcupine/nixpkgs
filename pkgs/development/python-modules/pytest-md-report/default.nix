@@ -12,14 +12,14 @@
 
 buildPythonPackage rec {
   pname = "pytest-md-report";
-  version = "0.5.1";
+  version = "0.6.2";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-WzPspBVcrtcDqZI+PuAttfI7YBKC5DW5IM+Y7iUdQFI=";
+    hash = "sha256-XpbGVevJtcPHt4v3xTgsH2gFbpaQRDAlJ5D4c33lzpk=";
   };
 
   propagatedBuildInputs = [
