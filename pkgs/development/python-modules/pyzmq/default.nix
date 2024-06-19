@@ -24,14 +24,14 @@
 
 buildPythonPackage rec {
   pname = "pyzmq";
-  version = "25.1.2";
+  version = "26.0.3";
   pyproject = true;
 
   disabled = pythonOlder "3.6";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-k/GqMR6LuRLjTwBM8YZAek6Q7sTw7MDv0mBWv37aAiY=";
+    hash = "sha256-26fZ8uBH36K8o7AfT4SqUkZyUgPWKE43kPLKFfumtAo=";
   };
 
   nativeBuildInputs = [
