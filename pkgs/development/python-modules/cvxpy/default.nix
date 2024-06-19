@@ -20,14 +20,14 @@
 
 buildPythonPackage rec {
   pname = "cvxpy";
-  version = "1.4.3";
+  version = "1.5.2";
   format = "pyproject";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-sbB4yMBZI60Sjn2BSwvhwzesBSYqeLdXqOb5V2SK2VM=";
+    hash = "sha256-gjHwBva1XaFBdYKCrst4iztXQkSHZdumqUQLYzYIDOM=";
   };
 
   # we need to patch out numpy version caps from upstream
