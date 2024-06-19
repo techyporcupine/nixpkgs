@@ -82,7 +82,8 @@ let
       substituteInPlace pyproject.toml \
         --replace-fail "Cython==3.0.5" "Cython>=3.0.5" \
         --replace-fail "meson-python==0.13.1" "meson-python>=0.13.1" \
-        --replace-fail "meson==1.2.1" "meson>=1.2.1"
+        --replace-fail "meson==1.2.1" "meson>=1.2.1" \
+        --replace-fail "numpy>=2.0.0rc1" "numpy"
     '';
 
     nativeBuildInputs =
