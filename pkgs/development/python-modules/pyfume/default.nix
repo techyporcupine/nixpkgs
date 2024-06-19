@@ -20,12 +20,17 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    pname = "pyFUME";
-    inherit version;
+    inherit pname version;
     hash = "sha256-UwW5OwFfu01lDKwz72iB2egbOoxb+t8UnEFIUjZmffU=";
   };
 
   nativeBuildInputs = [ setuptools ];
+
+  pythonRelaxDeps = [
+    "numpy"
+    "pandas"
+    "scipy"
+  ];
 
   propagatedBuildInputs = [
     fst-pso
