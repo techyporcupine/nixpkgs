@@ -18,7 +18,7 @@ stdenv.mkDerivation (finalAttrs: {
   src = fetchFromGitHub {
     owner = "stack-of-tasks";
     repo = "eigenpy";
-    rev = "refs/tags/v${version}";
+    rev = "refs/tags/v${finalAttrs.version}";
     hash = "sha256-D/k/ka500EZch5Ydym2WYtd5vciGkd9rdBUSjTsZ0w4=";
   };
 
