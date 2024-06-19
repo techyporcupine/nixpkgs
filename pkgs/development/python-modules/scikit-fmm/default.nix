@@ -10,12 +10,12 @@
 
 buildPythonPackage rec {
   pname = "scikit-fmm";
-  version = "2023.4.2";
+  version = "2024.5.29";
   pyproject = true;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-14ccR/ggdyq6kvJWUe8U5NJ96M45PArjwCqzxuJCPAs=";
+    hash = "sha256-sy7J5UKXhuL5K8zr3lBulUMekwNlBFfC8C2VzguVTUE=";
   };
 
   # TODO: Remove these patches after another stable release is made.
