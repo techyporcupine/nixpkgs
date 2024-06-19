@@ -37,6 +37,9 @@ buildPythonPackage rec {
     "test_url_is_native_str"
   ];
 
+  # Requires selenium and chrome
+  disabledTestPaths = [ "tests/examples/test_native_spa_pkce_auth0.py" ];
+
   pythonImportsCheck = [ "requests_oauthlib" ];
 
   meta = with lib; {
