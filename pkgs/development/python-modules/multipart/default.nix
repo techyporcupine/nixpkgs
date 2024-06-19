@@ -8,13 +8,13 @@
 
 buildPythonPackage rec {
   pname = "multipart";
-  version = "0.2.4";
+  version = "0.2.5";
 
   format = "setuptools";
 
   src = fetchPypi {
     inherit pname version;
-    sha256 = "06ba205360bc7096fefe618e4f1e9b2cdb890b4f2157053a81f386912a2522cb";
+    sha256 = "sha256-+piDjUDJZ7sZWJYmoPuKXEDEId2i/r4bA1H89ibiRlE=";
   };
 
   patches = [
