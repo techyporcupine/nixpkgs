@@ -9,14 +9,14 @@
 
 buildPythonPackage rec {
   pname = "azure-mgmt-storage";
-  version = "21.1.0";
+  version = "21.2.0";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-1tPA6RfJiLye0Eckd9PvP5CIYAnrHZenEZRPg3VjAWI=";
+    hash = "sha256-KHyYQLAb6TGBnUA9p+1SvWL9B3sFKd1HDm28T+3ksg0=";
   };
 
   propagatedBuildInputs = [
