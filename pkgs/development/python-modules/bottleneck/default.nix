@@ -10,7 +10,7 @@
 
 buildPythonPackage rec {
   pname = "bottleneck";
-  version = "1.3.8";
+  version = "1.4.0";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
@@ -18,7 +18,7 @@ buildPythonPackage rec {
   src = fetchPypi {
     pname = "Bottleneck";
     inherit version;
-    hash = "sha256-Z4DYlpabp/U8iZW6kMh8VIvrPbQ13JDGC5oQ7Rq02Gg=";
+    hash = "sha256-vrNt9Rm4cJ59NXwMljmwO4hcpjVbv15TdSxoXeUWBbg=";
   };
 
   propagatedBuildInputs = [ numpy ];
