@@ -8,14 +8,14 @@
 
 buildPythonPackage rec {
   pname = "lazy-loader";
-  version = "0.3";
+  version = "0.4";
   format = "pyproject";
 
   src = fetchFromGitHub {
     owner = "scientific-python";
     repo = "lazy_loader";
     rev = "refs/tags/v${version}";
-    hash = "sha256-Ky9EwPYt/wBqWXopH5WFjlVG+/Rd2gc+mlCeWqG7mZg=";
+    hash = "sha256-4Kid6yhm9C2liPoW+NlCsOiBZvv6iYt7hDunARc4PRY=";
   };
 
   nativeBuildInputs = [ flit-core ];
