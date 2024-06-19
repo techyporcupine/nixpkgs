@@ -21,7 +21,7 @@
 }:
 
 buildPythonPackage rec {
-  version = "0.21.7";
+  version = "0.22.1";
   pname = "dulwich";
   format = "setuptools";
 
@@ -30,8 +30,8 @@ buildPythonPackage rec {
   src = fetchFromGitHub {
     owner = "jelmer";
     repo = "dulwich";
-    rev = "refs/tags/${pname}-${version}";
-    hash = "sha256-iP+6KtaQ8tfOobovSLSJZogS/XWW0LuHgE2oV8uQW/8=";
+    rev = "refs/tags/dulwich-${version}";
+    hash = "sha256-bf3ZUMX4afpdTBpFnx0HMyzCNG6V/p4eOl36djxGbtk=";
   };
 
   build-system = [
