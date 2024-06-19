@@ -9,14 +9,14 @@
 
 buildPythonPackage rec {
   pname = "panasonic-viera";
-  version = "0.4.0";
+  version = "0.4.2";
 
   format = "setuptools";
 
   src = fetchPypi {
     pname = "panasonic_viera";
     inherit version;
-    sha256 = "baad2db7958ddbc7288d0f1c50a9eeddd8b83f3d30ad14ac3f6c51fe953e0eb6";
+    sha256 = "sha256-gcFAFwEdCqiC1yHIA2B/gzmwvRwMC9fDxkgCbzIOpjM=";
   };
 
   propagatedBuildInputs = [
