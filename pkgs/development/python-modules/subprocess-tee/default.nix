@@ -9,12 +9,12 @@
 
 buildPythonPackage rec {
   pname = "subprocess-tee";
-  version = "0.4.1";
+  version = "0.4.2";
   format = "pyproject";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-s8EkmT+LiNHrHC/eC8IGl4fqxyC6iHccuhfoyTMkgl0=";
+    hash = "sha256-kbK02jqumnCI2ErK8uoKvuP0/ZwNLq5pqbkSKnFHZZA=";
   };
 
   nativeBuildInputs = [ setuptools-scm ];
