@@ -6,11 +6,11 @@
 
 buildPythonPackage rec {
   pname = "conway-polynomials";
-  version = "0.9";
+  version = "0.10";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-btIwBgm8558BddW4VGhY7sAoVPi+MjfbjRRJzMzBxYE=";
+    hash = "sha256-T2GfZPgaPrFsTibFooT+7sJ6b0qtZHZD55ryiYAa4PM=";
   };
 
   pythonImportsCheck = [ "conway_polynomials" ];
