@@ -25,14 +25,14 @@
 
 buildPythonPackage rec {
   pname = "scikit-learn";
-  version = "1.4.2";
+  version = "1.5.0";
   pyproject = true;
 
   disabled = pythonOlder "3.9";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-2qHEcdlbrQgMbkS0lGyTkKSEKtwwglcsIOT4iE456Vk=";
+    hash = "sha256-eJ49sBx1DtbUlvott9UGN4V7RR5XvK6GO/9wfBJHvvc=";
   };
 
   # Avoid build-system requirements causing failure
