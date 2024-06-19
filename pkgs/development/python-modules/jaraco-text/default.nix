@@ -21,7 +21,7 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.6";
 
   src = fetchPypi {
-    pname = "jaraco.text";
+    pname = "jaraco_text";
     inherit version;
     hash = "sha256-tplJH50HS0/q/f2gQH+lu8XYP0hWB6AS6TRyuhYfaEM=";
   };
