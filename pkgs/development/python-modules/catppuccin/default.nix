@@ -11,7 +11,7 @@
 
 buildPythonPackage rec {
   pname = "catppuccin";
-  version = "2.2.0";
+  version = "2.3.0";
 
   pyproject = true;
 
@@ -19,7 +19,7 @@ buildPythonPackage rec {
     owner = "catppuccin";
     repo = "python";
     rev = "refs/tags/v${version}";
-    hash = "sha256-+V1rln3FlFvs1FEIANIch7k/b2EsI9xBxhg3Bwg99+I=";
+    hash = "sha256-1CPNs+n9S7fV+EvhFWBwnv6/N3UWQ/jiyRcn4XKzmd8=";
   };
 
   build-system = [
