@@ -8,12 +8,12 @@
 
 buildPythonPackage rec {
   pname = "grpcio-reflection";
-  version = "1.62.2";
+  version = "1.64.1";
   format = "setuptools";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-LdRIBtaNAAZjZSm9pXMBKxmkIoFHjC0FHNquu5HiUWw=";
+    hash = "sha256-43511hl02iKjtcJgSZKqLyFjlx6jeK2Fa047YyEJ88c=";
   };
 
   pythonRelaxDeps = [ "grpcio" ];
