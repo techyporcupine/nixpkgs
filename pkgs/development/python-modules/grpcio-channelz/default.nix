@@ -8,12 +8,12 @@
 
 buildPythonPackage rec {
   pname = "grpcio-channelz";
-  version = "1.62.2";
+  version = "1.64.1";
   format = "setuptools";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-bkrCxD12skXF9m2Y9SPbCHhrGGEoplXubyCjCn5o5Pk=";
+    hash = "sha256-FUNKohIyERNoZe1y5JzmaP6IausTewNgpv6765Efd1U=";
   };
 
   pythonRelaxDeps = [ "grpcio" ];
