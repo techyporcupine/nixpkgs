@@ -21,7 +21,7 @@
 
 buildPythonPackage rec {
   pname = "firebase-messaging";
-  version = "0.2.1";
+  version = "0.3.0";
   pyproject = true;
 
   disabled = pythonOlder "3.8";
@@ -30,7 +30,7 @@ buildPythonPackage rec {
     owner = "sdb9696";
     repo = "firebase-messaging";
     rev = "refs/tags/${version}";
-    hash = "sha256-8e+S12ZMqAmK7OR7O45QsRa0UKQq6cngeaqz2ugi6iY=";
+    hash = "sha256-pZpnekJ11yx3L8l56vZOa4uS+jJMxUkYODgNAqysVeY=";
   };
 
   outputs = [
