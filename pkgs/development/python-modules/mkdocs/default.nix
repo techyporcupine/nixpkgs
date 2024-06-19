@@ -17,6 +17,7 @@
   markdown,
   markupsafe,
   mergedeep,
+  mkdocs-get-deps,
   packaging,
   pathspec,
   platformdirs,
@@ -47,15 +48,16 @@ buildPythonPackage rec {
     hash = "sha256-tpDKomHFoGYPLz7rcohkU9w7G/5+YkJ5Y6wJJRyMecI=";
   };
 
-  nativeBuildInputs = [ hatchling ];
+  build-system = [ hatchling ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     click
     ghp-import
     jinja2
     markdown
     markupsafe
     mergedeep
+    mkdocs-get-deps
     packaging
     pathspec
     platformdirs
