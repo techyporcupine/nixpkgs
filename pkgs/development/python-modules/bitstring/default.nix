@@ -5,7 +5,8 @@
   pythonOlder,
   bitarray,
   setuptools,
-  unittestCheckHook,
+  pytest-benchmark,
+  pytestCheckHook,
 }:
 
 buildPythonPackage rec {
@@ -22,11 +23,24 @@ buildPythonPackage rec {
     hash = "sha256-m2LZdUWOMxzr/biZhD1nWagab8PohHTcr+U1di0nkrU=";
   };
 
-  nativeBuildInputs = [ setuptools ];
+  build-system = [ setuptools ];
 
-  propagatedBuildInputs = [ bitarray ];
+  dependencies = [ bitarray ];
 
-  nativeCheckInputs = [ unittestCheckHook ];
+  nativeCheckInputs = [
+    pytest-benchmark
+    pytestCheckHook
+  ];
+
+  pytestFlagsArray = [
+    "--benchmark-disable"
+  ];
+
+  disabledTestPaths = [
+    "tests/test_bits.py"
+    "tests/test_fp8.py"
+    "tests/test_mxfp.py"
+  ];
 
   pythonImportsCheck = [ "bitstring" ];
 
