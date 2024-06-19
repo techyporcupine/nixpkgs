@@ -6,6 +6,7 @@
   glibcLocales,
   importlib-metadata,
   logfury,
+  annotated-types,
   packaging,
   pdm-backend,
   pyfakefs,
@@ -39,6 +40,7 @@ buildPythonPackage rec {
 
   dependencies =
     [
+      annotated-types
       packaging
       logfury
       requests
