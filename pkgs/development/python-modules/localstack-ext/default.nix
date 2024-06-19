@@ -21,7 +21,8 @@ buildPythonPackage rec {
   format = "setuptools";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "localstack_ext";
+    inherit version;
     hash = "sha256-tJNgNqCzlebbDOOgkScOKaf04bLTVIjP+BaFiDLo/Gs=";
   };
 
