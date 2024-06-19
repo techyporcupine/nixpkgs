@@ -20,14 +20,14 @@
 
 buildPythonPackage rec {
   pname = "ase";
-  version = "3.22.1";
+  version = "3.23.0";
   pyproject = true;
 
   disabled = isPy27;
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-AE32sOoEsRFMeQ+t/kXUEl6w5TElxmqTQlr4U9gqtDI=";
+    hash = "sha256-kaKqMdib2QsO/f5KfoQmTzKCiyq/yfOOZeBBrXb+yK4=";
   };
 
   build-system = [ setuptools ];
