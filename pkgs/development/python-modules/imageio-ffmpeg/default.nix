@@ -9,12 +9,12 @@
 
 buildPythonPackage rec {
   pname = "imageio-ffmpeg";
-  version = "0.4.9";
+  version = "0.5.1";
   format = "setuptools";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-ObzRZgEY7zYPpAR0VlAQcTZGYaqdkCHT0mxY8e4ggfU=";
+    hash = "sha256-Dtepsx9WCwydkpxSkc1DDt65vtPOmkl0gOU23UMmSEw=";
   };
 
   patches = [
