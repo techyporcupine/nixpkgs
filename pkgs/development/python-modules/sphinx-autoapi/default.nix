@@ -23,18 +23,19 @@
 buildPythonPackage rec {
   pname = "sphinx-autoapi";
   version = "3.1.1";
-  format = "pyproject";
+  pyproject = true;
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "sphinx_autoapi";
+    inherit version;
     hash = "sha256-tfbjxhzYbAzbfud6nVgMD9EWcmxbKc3LHx1fMKW8ob0=";
   };
 
-  nativeBuildInputs = [ setuptools ];
+  build-system = [ setuptools ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     anyascii
     astroid
     jinja2
