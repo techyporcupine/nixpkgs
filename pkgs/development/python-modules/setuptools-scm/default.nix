@@ -23,19 +23,20 @@ buildPythonPackage rec {
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "setuptools_scm";
+    inherit version;
     hash = "sha256-Qt6htldxy6k7elFdZaZdgkblYHaKZrkQalksjn8myKc=";
   };
 
-  nativeBuildInputs = [ setuptools ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
+  build-system = [ setuptools ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     packaging
     setuptools
     typing-extensions
   ] ++ lib.optionals (pythonOlder "3.11") [ tomli ];
 
-  passthru.optional-dependencies = {
+  optional-dependencies = {
     rich = [ rich ];
   };
 
