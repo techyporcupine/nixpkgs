@@ -11,14 +11,14 @@
 
 buildPythonPackage rec {
   pname = "marisa-trie";
-  version = "1.1.0";
+  version = "1.2.0";
   format = "setuptools";
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
     inherit pname version;
-    hash = "sha256-W/Q+0M82r0V4/nsDTPlfUyQ5dmUWaA5L1gNyNhHr1Ws=";
+    hash = "sha256-/t/GdJf4qidXdWtc9JN1nyRdMh+3iRTOElttddqom18=";
   };
 
   nativeBuildInputs = [ cython ];
