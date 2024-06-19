@@ -4,7 +4,7 @@
   fetchFromGitHub,
   hatch-vcs,
   hatchling,
-  pytest-lazy-fixture,
+  pytest-lazy-fixtures,
   pytestCheckHook,
   pythonOlder,
   wcwidth,
@@ -32,7 +32,7 @@ buildPythonPackage rec {
   propagatedBuildInputs = [ wcwidth ];
 
   nativeCheckInputs = [
-    pytest-lazy-fixture
+    pytest-lazy-fixtures
     pytestCheckHook
   ];
 
