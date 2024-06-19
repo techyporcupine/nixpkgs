@@ -9,14 +9,14 @@
 
 buildPythonPackage rec {
   pname = "bme680";
-  version = "1.1.1";
+  version = "2.0.0";
   format = "setuptools";
 
   src = fetchFromGitHub {
     owner = "pimoroni";
     repo = "bme680-python";
-    rev = "v${version}";
-    hash = "sha256-gmdRxMJ0DoCyNcb/bYp746PBi4HktHAAYOcSQJ0Uheg=";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-ep0dnok/ycEoUAnOK4QmdqdO0r4ttzSoqHDl7aPengE=";
   };
 
   propagatedBuildInputs = [ smbus-cffi ];
