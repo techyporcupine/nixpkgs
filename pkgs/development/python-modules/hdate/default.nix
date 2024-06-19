@@ -11,7 +11,7 @@
 
 buildPythonPackage rec {
   pname = "hdate";
-  version = "0.10.8";
+  version = "0.10.9";
   pyproject = true;
 
   disabled = pythonOlder "3.7";
@@ -20,7 +20,7 @@ buildPythonPackage rec {
     owner = "py-libhdate";
     repo = "py-libhdate";
     rev = "refs/tags/v${version}";
-    hash = "sha256-SANCZl+1ghUuuxZAl6oycvo7hB7mIagjVEmwzarsspk=";
+    hash = "sha256-Cni8GegB8GAhtIKKCgSn3QavE/Gi9Rcm9v0grToMyq4=";
   };
 
   build-system = [
