@@ -22,14 +22,14 @@
 
 buildPythonPackage rec {
   pname = "pyro-ppl";
-  version = "1.9.0";
+  version = "1.9.1";
   pyproject = true;
 
   disabled = pythonOlder "3.8";
 
   src = fetchPypi {
     inherit version pname;
-    hash = "sha256-QfTABRWVaCgPvFEWSJYKmKKxpBACfYvQpDIgrJsQLN8=";
+    hash = "sha256-XhWW3idsA4o/d9JYCpDQqXEm4BBJAERKCI7uYguw1l4=";
   };
 
   nativeBuildInputs = [ setuptools ];
