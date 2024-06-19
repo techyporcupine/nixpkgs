@@ -3,7 +3,7 @@
   astral,
   buildPythonPackage,
   fetchFromGitHub,
-  poetry-core,
+  pdm-backend,
   pytestCheckHook,
   pythonOlder,
   pytz,
@@ -24,7 +24,7 @@ buildPythonPackage rec {
   };
 
   build-system = [
-    poetry-core
+    pdm-backend
   ];
 
   pythonRelaxDeps = [
