@@ -11,6 +11,7 @@
   importlib-resources,
   iso3166,
   pycountry,
+  rstr,
 
   # optional-dependencies
   pydantic,
@@ -33,24 +34,25 @@ buildPythonPackage rec {
     hash = "sha256-32+YpDIXcgldwtxU5s9V6cong70EiyEgf9QCNYdEvp0=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     hatchling
     hatch-vcs
   ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     iso3166
     pycountry
+    rstr
   ] ++ lib.optionals (pythonOlder "3.12") [ importlib-resources ];
 
-  passthru.optional-dependencies = {
+  optional-dependencies = {
     pydantic = [ pydantic ];
   };
 
   nativeCheckInputs = [
     pytest-cov
     pytestCheckHook
-  ] ++ lib.flatten (lib.attrValues passthru.optional-dependencies);
+  ] ++ lib.flatten (lib.attrValues optional-dependencies);
 
   pythonImportsCheck = [ "schwifty" ];
 
