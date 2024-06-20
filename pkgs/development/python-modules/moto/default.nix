@@ -56,7 +56,7 @@ buildPythonPackage rec {
 
   build-system = [ setuptools ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     boto3
     botocore
     cryptography
@@ -68,7 +68,7 @@ buildPythonPackage rec {
     jinja2
   ];
 
-  passthru.optional-dependencies = {
+  optional-dependencies = {
     # non-exhaustive list of extras, that was cobbled together for testing
     all = [
       antlr4-python3-runtime
@@ -98,7 +98,7 @@ buildPythonPackage rec {
     pytestCheckHook
     pytest-order
     pytest-xdist
-  ] ++ passthru.optional-dependencies.all;
+  ] ++ optional-dependencies.all;
 
   # Some tests depend on AWS credentials environment variables to be set.
   env.AWS_ACCESS_KEY_ID = "ak";
