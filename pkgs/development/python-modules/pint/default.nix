@@ -8,7 +8,10 @@
   setuptools,
   setuptools-scm,
 
-  # propagates
+  # dependencies
+  appdirs,
+  flexcache,
+  flexparser,
   typing-extensions,
 
   # tests
@@ -32,12 +35,17 @@ buildPythonPackage rec {
     hash = "sha256-xsfAJ7ghQT2xrEazt70pZZKEi1rsKaiM/G43j9E3GQM=";
   };
 
-  nativeBuildInputs = [
+  build-system = [
     setuptools
     setuptools-scm
   ];
 
-  propagatedBuildInputs = [ typing-extensions ];
+  dependencies = [
+    appdirs
+    flexcache
+    flexparser
+    typing-extensions
+  ];
 
   nativeCheckInputs = [
     pytestCheckHook
