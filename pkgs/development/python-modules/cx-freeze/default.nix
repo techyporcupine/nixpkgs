@@ -18,7 +18,7 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.8";
 
   src = fetchPypi {
-    pname = "cx_Freeze";
+    pname = "cx_freeze";
     inherit version;
     hash = "sha256-M1wwutDj5lNlXyMJkzCEWL7cmXuvW3qZXoZB3rousoc=";
   };
