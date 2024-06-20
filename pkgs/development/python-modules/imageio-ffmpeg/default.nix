@@ -1,20 +1,29 @@
 {
   lib,
   buildPythonPackage,
-  fetchPypi,
+  fetchFromGitHub,
   substituteAll,
   ffmpeg,
+
+  # build-system
+  setuptools,
+
+  # checks
+  psutil,
+  pytestCheckHook,
   python,
 }:
 
 buildPythonPackage rec {
   pname = "imageio-ffmpeg";
   version = "0.5.1";
-  format = "setuptools";
+  pyproject = true;
 
-  src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-Dtepsx9WCwydkpxSkc1DDt65vtPOmkl0gOU23UMmSEw=";
+  src = fetchFromGitHub {
+    owner = "imageio";
+    repo = "imageio-ffmpeg";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-i9DBEhRyW5shgnhpaqpPLTI50q+SATJnxur8PAauYX4=";
   };
 
   patches = [
@@ -29,15 +38,25 @@ buildPythonPackage rec {
     sed -i '/setup_requires=\["pip>19"\]/d' setup.py
   '';
 
-  checkPhase = ''
-    runHook preCheck
+  build-system = [ setuptools ];
 
+  nativeCheckInputs = [
+    psutil
+    pytestCheckHook
+  ];
+
+  disabledTestPaths = [
+    # network access
+    "tests/test_io.py"
+    "tests/test_special.py"
+    "tests/test_terminate.py"
+  ];
+
+  postCheck = ''
     ${python.interpreter} << EOF
     from imageio_ffmpeg import get_ffmpeg_version
     assert get_ffmpeg_version() == '${ffmpeg.version}'
     EOF
-
-    runHook postCheck
   '';
 
   pythonImportsCheck = [ "imageio_ffmpeg" ];
