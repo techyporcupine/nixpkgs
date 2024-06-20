@@ -156,6 +156,9 @@ buildPythonPackage rec {
     # Threading tests regularly blocks test execution
     "tests/test_utilities/test_threaded_server.py"
     "tests/test_s3/test_s3_bucket_policy.py"
+
+    # https://github.com/getmoto/moto/issues/7786
+    "tests/test_dynamodb/test_dynamodb_import_table.py"
   ];
 
   meta = with lib; {
