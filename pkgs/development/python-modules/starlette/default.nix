@@ -40,7 +40,7 @@ buildPythonPackage rec {
     hash = "sha256-GiCN1sfhLu9i19d2OcLZrlY8E64DFrFh+ITRSvLaxdE=";
   };
 
-  build-systems = [ hatchling ];
+  build-system = [ hatchling ];
 
   dependencies = [ anyio ] ++ lib.optionals (pythonOlder "3.10") [ typing-extensions ];
 
