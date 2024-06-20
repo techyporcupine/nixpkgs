@@ -3,7 +3,7 @@
   buildPythonPackage,
   fetchPypi,
   substituteAll,
-  ffmpeg_4,
+  ffmpeg,
   python,
 }:
 
@@ -20,7 +20,7 @@ buildPythonPackage rec {
   patches = [
     (substituteAll {
       src = ./ffmpeg-path.patch;
-      ffmpeg = "${ffmpeg_4}/bin/ffmpeg";
+      ffmpeg = "${ffmpeg}/bin/ffmpeg";
     })
   ];
 
@@ -34,7 +34,7 @@ buildPythonPackage rec {
 
     ${python.interpreter} << EOF
     from imageio_ffmpeg import get_ffmpeg_version
-    assert get_ffmpeg_version() == '${ffmpeg_4.version}'
+    assert get_ffmpeg_version() == '${ffmpeg.version}'
     EOF
 
     runHook postCheck
@@ -43,6 +43,7 @@ buildPythonPackage rec {
   pythonImportsCheck = [ "imageio_ffmpeg" ];
 
   meta = with lib; {
+    changelog = "https://github.com/imageio/imageio-ffmpeg/releases/tag/v${version}";
     description = "FFMPEG wrapper for Python";
     homepage = "https://github.com/imageio/imageio-ffmpeg";
     license = licenses.bsd2;
