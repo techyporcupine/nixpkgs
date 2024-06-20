@@ -1,19 +1,20 @@
-{ lib
-, buildPythonPackage
-, fetchFromGitHub
+{
+  lib,
+  buildPythonPackage,
+  fetchFromGitHub,
 
-# build-system
-, setuptools
-, setuptools-scm
-, wheel
+  # build-system
+  setuptools,
+  setuptools-scm,
+  wheel,
 
-# dependencies
-, typing-extensions
+  # dependencies
+  typing-extensions,
 
-# checks
-, pytestCheckHook
-, pytest-mpl
-, pytest-subtests
+  # checks
+  pytestCheckHook,
+  pytest-mpl,
+  pytest-subtests,
 }:
 
 buildPythonPackage rec {
@@ -34,9 +35,7 @@ buildPythonPackage rec {
     wheel
   ];
 
-  dependencies = [
-    typing-extensions
-  ];
+  dependencies = [ typing-extensions ];
 
   nativeCheckInputs = [
     pytestCheckHook
