@@ -22,7 +22,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "python_gitlab";
+    inherit version;
     hash = "sha256-tWrjY4kDdMrt6FPvVS6SxBVR1gWADeHGS6YbzyXyN7A=";
   };
 
