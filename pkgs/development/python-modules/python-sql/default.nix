@@ -14,7 +14,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "python_sql";
+    inherit version;
     hash = "sha256-93RnHx0IT6a6Q4mJJM3r5O0NAHHfjWCAQKzU8cjYaqM=";
   };
 
