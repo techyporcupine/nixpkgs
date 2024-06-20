@@ -2,14 +2,14 @@
   lib,
   buildPythonPackage,
   fetchFromGitHub,
-  flit-core,
+  setuptools,
   pytestCheckHook,
 }:
 
 buildPythonPackage rec {
   pname = "lazy-loader";
   version = "0.4";
-  format = "pyproject";
+  pyproject = true;
 
   src = fetchFromGitHub {
     owner = "scientific-python";
@@ -18,9 +18,11 @@ buildPythonPackage rec {
     hash = "sha256-4Kid6yhm9C2liPoW+NlCsOiBZvv6iYt7hDunARc4PRY=";
   };
 
-  nativeBuildInputs = [ flit-core ];
+  build-system = [ setuptools ];
 
   nativeCheckInputs = [ pytestCheckHook ];
+
+  pythonImportsCheck = [ "lazy_loader" ];
 
   meta = with lib; {
     description = "Populate library namespace without incurring immediate import costs";
