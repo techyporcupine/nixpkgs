@@ -2,6 +2,7 @@
   lib,
   buildPythonPackage,
   fetchPypi,
+  setuptools,
   grpcio,
   protobuf,
 }:
@@ -9,16 +10,22 @@
 buildPythonPackage rec {
   pname = "grpcio-channelz";
   version = "1.64.1";
-  format = "setuptools";
+  pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "grpcio_channelz";
+    inherit version;
     hash = "sha256-FUNKohIyERNoZe1y5JzmaP6IausTewNgpv6765Efd1U=";
   };
 
-  pythonRelaxDeps = [ "grpcio" ];
+  build-system = [ setuptools ];
 
-  propagatedBuildInputs = [
+  pythonRelaxDeps = [
+    "grpcio"
+    "protobuf"
+  ];
+
+  dependencies = [
     grpcio
     protobuf
   ];
