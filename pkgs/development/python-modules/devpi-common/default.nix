@@ -19,7 +19,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "devpi_common";
+    inherit version;
     hash = "sha256-I1oKmkXJblTGC6a6L3fYVs+Q8aacG+6UmIfp7cA6Qcw=";
   };
 
