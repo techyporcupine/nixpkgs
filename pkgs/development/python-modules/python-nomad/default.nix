@@ -2,6 +2,7 @@
   lib,
   buildPythonPackage,
   fetchPypi,
+  setuptools,
   requests,
   pythonOlder,
 }:
@@ -9,16 +10,19 @@
 buildPythonPackage rec {
   pname = "python-nomad";
   version = "2.0.1";
-  format = "setuptools";
+  pyproject = true;
 
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "python_nomad";
+    inherit version;
     hash = "sha256-TXCm6FxYoavjN3ASioQ7yXQVsDDXedDKBgGGP8ghQdM=";
   };
 
-  propagatedBuildInputs = [ requests ];
+  build-system = [ setuptools ];
+
+  dependencies = [ requests ];
 
   # Tests require nomad agent
   doCheck = false;
