@@ -4,6 +4,7 @@
   buildPythonPackage,
   pythonOlder,
   fetchFromGitHub,
+  attrs,
   duet,
   matplotlib,
   networkx,
@@ -52,6 +53,7 @@ buildPythonPackage rec {
 
   propagatedBuildInputs =
     [
+      attrs
       duet
       matplotlib
       networkx
