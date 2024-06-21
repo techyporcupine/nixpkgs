@@ -4,7 +4,6 @@
   buildPythonPackage,
   cmake,
   fetchFromGitHub,
-  fetchpatch,
   gtest,
   nbval,
   numpy,
@@ -38,16 +37,7 @@ buildPythonPackage rec {
     hash = "sha256-I1wwfn91hdH3jORIKny0Xc73qW2P04MjkVCgcaNnQUE=";
   };
 
-  patches = [
-    ./1.15.0-CVE-2024-27318.patch
-    (fetchpatch {
-      name = "CVE-2024-27319.patch";
-      url = "https://github.com/onnx/onnx/commit/08a399ba75a805b7813ab8936b91d0e274b08287.patch";
-      hash = "sha256-9X92N9i/hpQjDGe4I/C+FwUcTUTtP2Nf7+pcTA2sXoA=";
-    })
-  ];
-
-  nativeBuildInputs = [
+  build-system = [
     cmake
     pybind11
   ];
@@ -56,10 +46,11 @@ buildPythonPackage rec {
     abseil-cpp
     protobuf
     google-re2
+    gtestStatic
     pillow
   ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     protobuf_21
     protobuf
     numpy
