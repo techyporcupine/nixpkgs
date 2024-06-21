@@ -53,11 +53,11 @@ buildPythonPackage rec {
 
   dontUseCmakeConfigure = true;
 
-  buildInputs = [
-    secp256k1
-  ];
+  env.COINCURVE_IGNORE_SYSTEM_LIB = "OFF";
 
-  propagatedBuildInputs = [
+  buildInputs = [ secp256k1 ];
+
+  dependencies = [
     asn1crypto
     cffi
   ];
