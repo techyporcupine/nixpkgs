@@ -36,7 +36,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.8";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "snowflake_connector_python";
+    inherit version;
     hash = "sha256-MWnAFKA+X1hVESYF45OJelUuVYlTxp8loC4zsZmIZNA=";
   };
 
