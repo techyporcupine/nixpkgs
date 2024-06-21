@@ -1,7 +1,7 @@
 {
   lib,
   buildPythonPackage,
-  fetchPypi,
+  fetchFromGitHub,
   django,
   pythonOlder,
 }:
@@ -13,9 +13,11 @@ buildPythonPackage rec {
 
   disabled = pythonOlder "3.7";
 
-  src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-n5sFBY3fiI8eb4QASLjXBf+TleO1KgcWXao9i5NgVRs=";
+  src = fetchFromGitHub {
+    owner = "jazzband";
+    repo = "dj-database-url";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-i2btutob+5R+FFPlGwRSNF01MTfxVop8xaePDHxnqLE=";
   };
 
   propagatedBuildInputs = [ django ];
