@@ -31,14 +31,14 @@
 
 buildPythonPackage rec {
   pname = "blosc2";
-  version = "2.6.2";
+  version = "2.5.1";
   pyproject = true;
 
   src = fetchFromGitHub {
     owner = "Blosc";
     repo = "python-blosc2";
     rev = "refs/tags/v${version}";
-    hash = "sha256-boRQgZ2d4hwt1V65LY8eLI0rQSIwZ7W36S8m/GhyGVo=";
+    hash = "sha256-yBgnNJU1q+FktIkpQn74LuRP19Ta/fNC60Z8TxzlWPk=";
   };
 
   postPatch = ''
