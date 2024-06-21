@@ -2,7 +2,7 @@
   lib,
   behave,
   buildPythonPackage,
-  fetchPypi,
+  fetchFromGitHub,
   lxml,
   mock,
   pyparsing,
@@ -19,14 +19,16 @@ buildPythonPackage rec {
 
   disabled = pythonOlder "3.7";
 
-  src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-DPHyLpW5ACrdynlI4W8s16zf1JgEfxlByl0pPbd2Lv0=";
+  src = fetchFromGitHub {
+    owner = "python-openxml";
+    repo = "python-docx";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-isxMtq5j5J02GcHMzOJdJw+ZokLoxA6fG1xsN21Irbc=";
   };
 
-  nativeBuildInputs = [ setuptools ];
+  build-system = [ setuptools ];
 
-  propagatedBuildInputs = [
+  dependencies = [
     lxml
     typing-extensions
   ];
