@@ -1,7 +1,7 @@
 {
   lib,
   buildPythonPackage,
-  fetchPypi,
+  fetchFromGitHub,
   setuptools-scm,
   pytestCheckHook,
   enrich,
@@ -12,9 +12,11 @@ buildPythonPackage rec {
   version = "0.4.2";
   format = "pyproject";
 
-  src = fetchPypi {
-    inherit pname version;
-    hash = "sha256-kbK02jqumnCI2ErK8uoKvuP0/ZwNLq5pqbkSKnFHZZA=";
+  src = fetchFromGitHub {
+    owner = "pycontribs";
+    repo = "subprocess-tee";
+    rev = "refs/tags/v${version}";
+    hash = "sha256-rfI4UZdENfSQ9EbQeldv6DDGIQe5yMjboGTCOwed1AU=";
   };
 
   nativeBuildInputs = [ setuptools-scm ];
