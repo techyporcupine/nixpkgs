@@ -14,11 +14,12 @@ buildPythonPackage rec {
   pyproject = true;
 
   src = fetchPypi {
-    inherit version pname;
+    pname = "zeroc_ice";
+    inherit version;
     hash = "sha256-sGOq/aNg33EfdpRVKbtUFXbyZr5B5dWi3Xf10yDBhmQ=";
   };
 
-  nativeBuildInputs = [ setuptools ];
+  build-system = [ setuptools ];
 
   buildInputs = [
     bzip2
