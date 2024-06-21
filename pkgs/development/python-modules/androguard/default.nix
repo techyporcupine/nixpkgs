@@ -32,14 +32,14 @@
 
 buildPythonPackage rec {
   pname = "androguard";
-  version = "4.1.2";
+  version = "3.4.0a1";
   format = "setuptools";
 
   src = fetchFromGitHub {
     repo = pname;
     owner = pname;
-    rev = "refs/tags/v${version}";
-    sha256 = "sha256-rBoYqhkjDcLhv1VVlIt5Uj05MyBk+QbLD1aCjQkrmqw=";
+    rev = "v${version}";
+    sha256 = "1aparxiq11y0hbvkayp92w684nyxyyx7mi0n1x6x51g5z6c58vmy";
   };
 
   nativeBuildInputs = [ packaging ] ++ lib.optionals withGui [ qt5.wrapQtAppsHook ];
