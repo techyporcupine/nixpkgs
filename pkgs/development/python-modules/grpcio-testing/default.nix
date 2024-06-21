@@ -16,7 +16,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "grpcio_testing";
+    inherit version;
     hash = "sha256-Nta9aurAzEg/iUlYE35Jz7uQ+syH4NMnHNuMGq7XEBw=";
   };
 
@@ -25,9 +26,13 @@ buildPythonPackage rec {
       --replace-fail '"grpcio>={version}".format(version=grpc_version.VERSION)' '"grpcio"'
   '';
 
-  nativeBuildInputs = [ setuptools ];
+  build-system = [ setuptools ];
 
-  propagatedBuildInputs = [
+  pythonRelaxDeps = [
+    "protobuf"
+  ];
+
+  dependencies = [
     grpcio
     protobuf
   ];
