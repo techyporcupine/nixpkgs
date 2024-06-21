@@ -1,57 +1,62 @@
 {
   buildPythonPackage,
   lib,
-  fetchPypi,
-  isPy27,
+  fetchFromGitHub,
+
+  # build-system
+  poetry-core,
+
+  # checks
   mock,
-  pytest,
-  pytest-runner,
+  pytestCheckHook,
   sh,
   coverage,
   docopt,
   requests,
-  urllib3,
   git,
-  isPy3k,
+  responses,
 }:
 
 buildPythonPackage rec {
   pname = "coveralls";
   version = "4.0.1";
-  format = "setuptools";
-  disabled = isPy27;
+  pyproject = true;
 
-  # wanted by tests
-  src = fetchPypi {
-    inherit pname version;
-    sha256 = "sha256-eyoKK875TylePPKNzFXKQLccd9HCRGtTjoXw97whqmk=";
+  src = fetchFromGitHub {
+    owner = "TheKevJames";
+    repo = "coveralls-python";
+    rev = "refs/tags/${version}";
+    hash = "sha256-1MjP99NykWNDyzWwZopLAzZ93vGX1mXEU+m+zvOBIZA=";
   };
+
+  build-system = [ poetry-core ];
+
+  dependencies = [
+    coverage
+    docopt
+    requests
+  ];
 
   nativeCheckInputs = [
     mock
     sh
-    pytest
+    pytestCheckHook
+    responses
     git
   ];
 
-  buildInputs = [ pytest-runner ];
-
-  postPatch = ''
-    sed -i "s/'coverage>=\([^,]\+\),.*',$/'coverage>=\1',/" setup.py
+  preCheck = ''
+    export PATH=${coverage}/bin:$PATH
   '';
 
-  # FIXME: tests requires .git directory to be present
-  doCheck = false;
-
-  checkPhase = ''
-    python setup.py test
-  '';
-
-  propagatedBuildInputs = [
-    coverage
-    docopt
-    requests
-  ] ++ lib.optional (!isPy3k) urllib3;
+  disabledTests = [
+    # requires .git in checkout
+    "test_git"
+    # try to run unwrapped python
+    "test_5"
+    "test_7"
+    "test_11"
+  ];
 
   meta = {
     description = "Show coverage stats online via coveralls.io";
