@@ -33,13 +33,6 @@ buildPythonPackage rec {
     hash = "sha256-zOooibXkk0iA6IYJViz+SIMgHwG0fr4WR3ZjhgIeUjE=";
   };
 
-  postPatch = ''
-    substituteInPlace kubernetes/base/config/kube_config_test.py \
-      --replace-fail "assertEquals" "assertEqual"
-  '';
-
-  pythonRelaxDeps = [ "urllib3" ];
-
   build-system = [
     setuptools
   ];
@@ -56,7 +49,7 @@ buildPythonPackage rec {
     websocket-client
   ];
 
-  passthru.optional-dependencies = {
+  optional-dependencies = {
     adal = [ adal ];
   };
 
@@ -65,7 +58,7 @@ buildPythonPackage rec {
   nativeCheckInputs = [
     mock
     pytestCheckHook
-  ] ++ lib.flatten (builtins.attrValues passthru.optional-dependencies);
+  ] ++ lib.flatten (builtins.attrValues optional-dependencies);
 
   disabledTests = lib.optionals stdenv.isDarwin [
     # AssertionError: <class 'urllib3.poolmanager.ProxyManager'> != <class 'urllib3.poolmanager.Poolmanager'>
