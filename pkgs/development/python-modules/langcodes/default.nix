@@ -4,10 +4,10 @@
   marisa-trie,
   pythonOlder,
   fetchPypi,
-  poetry-core,
   pytestCheckHook,
   language-data,
   setuptools,
+  setuptools-scm
 }:
 
 buildPythonPackage rec {
@@ -22,7 +22,10 @@ buildPythonPackage rec {
     sha256 = "sha256-rlp30aAdDR6RhUpnGJCJK3zpq7YBq3Mn/FyHT4meGXk=";
   };
 
-  nativeBuildInputs = [ poetry-core ];
+  nativeBuildInputs = [
+    setuptools
+    setuptools-scm
+  ];
 
   propagatedBuildInputs = [
     language-data
@@ -41,7 +44,7 @@ buildPythonPackage rec {
 
   meta = with lib; {
     description = "Python toolkit for working with and comparing the standardized codes for languages";
-    homepage = "https://github.com/LuminosoInsight/langcodes";
+    homepage = "https://github.com/georgkrause/langcodes";
     license = licenses.mit;
   };
 }
