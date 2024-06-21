@@ -16,7 +16,8 @@ buildPythonPackage rec {
   pyproject = true;
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "dvc_s3";
+    inherit version;
     hash = "sha256-HQEqwdzkdlmYb5GBI7SJMc+bNCmrC0oi/UsCRIGFzrY=";
   };
 
