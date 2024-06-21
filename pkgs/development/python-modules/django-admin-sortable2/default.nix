@@ -14,7 +14,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit version pname;
+    pname = "django_admin_sortable2";
+    inherit version;
     hash = "sha256-MKlSf5P8YbeixZVNtX2EKJMeN/Riw7RssQEFPcX1F1E=";
   };
 
