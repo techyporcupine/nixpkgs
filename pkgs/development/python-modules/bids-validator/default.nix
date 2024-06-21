@@ -17,7 +17,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "bids_validator";
+    inherit version;
     hash = "sha256-3ytrXRqq1h00zK0ElPLtc84wgoJa2jGVTE4UwlONSFw=";
   };
 
