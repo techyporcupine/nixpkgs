@@ -57,6 +57,8 @@ buildPythonPackage rec {
     "test_favicon"
     "test_vibrations_methods" # missing attribute
     "test_jmol_roundtrip" # missing attribute
+    "test_pw_input_write_nested_flat" # Did not raise DeprecationWarning
+    "test_fix_scaled" # Did not raise UserWarning
   ] ++ lib.optionals (pythonAtLeast "3.12") [ "test_info_calculators" ];
 
   preCheck = ''
