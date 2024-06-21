@@ -56,6 +56,11 @@ buildPythonPackage rec {
 
   pythonImportsCheck = [ "altair" ];
 
+  disabledTests = [
+    # ValueError: Saving charts in 'svg' format requires the vl-convert-python or altair_saver package: see http://github.com/altair-viz/altair_saver/
+    "test_renderer_with_none_embed_options"
+  ];
+
   disabledTestPaths = [
     # Disabled because it requires internet connectivity
     "tests/test_examples.py"
