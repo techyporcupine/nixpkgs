@@ -17,7 +17,8 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.8";
 
   src = fetchPypi {
-    inherit pname version;
+    pname = "django_stubs_ext";
+    inherit version;
     hash = "sha256-QJxiWF1/mWzvXHYObifqP/KflhyUN0fmdRnIN0IsrTI=";
   };
 
