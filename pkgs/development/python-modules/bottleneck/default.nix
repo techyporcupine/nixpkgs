@@ -16,8 +16,7 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.7";
 
   src = fetchPypi {
-    pname = "Bottleneck";
-    inherit version;
+    inherit pname version;
     hash = "sha256-vrNt9Rm4cJ59NXwMljmwO4hcpjVbv15TdSxoXeUWBbg=";
   };
 
