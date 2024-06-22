@@ -4,12 +4,10 @@
   ansible-core,
   buildPythonPackage,
   fetchPypi,
-  fetchpatch,
   glibcLocales,
   importlib-metadata,
   mock,
   openssh,
-  pbr,
   pexpect,
   psutil,
   pytest-mock,
@@ -20,6 +18,7 @@
   python-daemon,
   pyyaml,
   setuptools,
+  setuptools-scm,
   six,
 }:
 
@@ -35,26 +34,9 @@ buildPythonPackage rec {
     hash = "sha256-gtArJUiDDzelNRe2XII8SvNxBpQGx9ITtckEHUXgxbY=";
   };
 
-  patches = [
-    (fetchpatch {
-      name = "fix-tests.patch";
-      url = "https://github.com/ansible/ansible-runner/commit/0d522c90cfc1f305e118705a1b3335ccb9c1633d.patch";
-      hash = "sha256-eTnQkftvjK0YHU+ovotRVSuVlvaVeXp5SvYk1DPCg88=";
-      excludes = [
-        ".github/workflows/ci.yml"
-        "tox.ini"
-      ];
-    })
-    (fetchpatch {
-      # python 3.12 compat
-      url = "https://github.com/ansible/ansible-runner/commit/dc248497bb2375a363222ce755bf3a31f21d5f64.patch";
-      hash = "sha256-QT28Iw0uENoO35rqZpYBcmJB/GNDEF4m86SKf6p0XQU=";
-    })
-  ];
-
   build-system = [
     setuptools
-    pbr
+    setuptools-scm
   ];
 
   dependencies = [
