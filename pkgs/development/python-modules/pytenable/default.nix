@@ -33,6 +33,8 @@ buildPythonPackage rec {
     hash = "sha256-acMafLlO0yGEnW+0XeBWUpDWvOPFAB4RK/XyAb2JbPw=";
   };
 
+  pythonRelaxDeps = [ "defusedxml" ];
+
   build-system = [ setuptools ];
 
   dependencies = [
