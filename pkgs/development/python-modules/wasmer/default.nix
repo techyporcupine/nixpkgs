@@ -25,7 +25,7 @@ let
     }:
     buildPythonPackage rec {
       inherit pname;
-      version = "1.1.1";
+      version = "1.2.0";
       format = "pyproject";
 
       outputs = [ "out" ] ++ lib.optional (pname == "wasmer") "testsout";
@@ -74,7 +74,7 @@ let
 
       meta = with lib; {
         # https://github.com/wasmerio/wasmer-python/issues/778
-        broken = pythonAtLeast "3.12";
+        #broken = pythonAtLeast "3.12";
         description = "Python extension to run WebAssembly binaries";
         homepage = "https://github.com/wasmerio/wasmer-python";
         license = licenses.mit;
@@ -87,7 +87,7 @@ in
   wasmer = common {
     pname = "wasmer";
     buildAndTestSubdir = "packages/api";
-    cargoHash = "sha256-vpbwU1HrIQmQkce9SK8UOHrX5tOLv/XKsfJHteqOteA=";
+    cargoHash = "sha256-HKbVss6jGFdnCgXV3UYf6RxtmQM3+tq3cHfOSKw5JnY=";
   };
 
   wasmer-compiler-cranelift = common {
