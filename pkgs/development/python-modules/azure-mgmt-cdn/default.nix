@@ -16,8 +16,7 @@ buildPythonPackage rec {
   disabled = pythonOlder "3.8";
 
   src = fetchPypi {
-    pname = "azure_mgmt_cdn";
-    inherit version;
+    inherit pname version;
     hash = "sha256-RmMwTzG2Zy3sMgx857qXFcK5nn2LaEs3XwtO/9qQIQw=";
   };
 
