@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "https://download.silicondust.com/hdhomerun/hdhomerun_config_gui.tgz";
-    sha256 = "sha256-vzrSk742Ca2I8Uk0uGo44SxpEoVY1QBn62Ahwz8E7p8=";
+    sha256 = "sha256-bmAdPR5r2mKCncQSSHZ6GYtAk3scHpatnmXGy+a/654=";
   };
 
   nativeBuildInputs = [ pkg-config ];
