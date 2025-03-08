@@ -6,7 +6,7 @@
 
 python3Packages.buildPythonApplication rec {
   pname = "wyoming-faster-whisper";
-  version = "2.4.0";
+  version = "2.5.0";
   pyproject = true;
 
   src = fetchFromGitHub {
