@@ -10,9 +10,9 @@ python3Packages.buildPythonApplication rec {
   pyproject = true;
 
   src = fetchFromGitHub {
-    owner = "rhasspy";
+    owner = "Zerwin";
     repo = "wyoming-faster-whisper";
-    rev = "refs/tags/v${version}";
+    rev = "master";
     hash = "sha256-Ai28i+2/oWI2Y61x7U5an5MBHfuBaGy6qZZwZydS308=";
   };
 
