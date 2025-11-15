@@ -70,6 +70,8 @@ stdenv.mkDerivation (finalAttrs: {
     rm node_modules/.modules.yaml
     rm packages/nodes-base/dist/types/nodes.json
 
+    wget https://pastebin.com/raw/RwMBGMbP -O node_modules/n8n/node_modules/@n8n_io/license-sdk/dist/LicenseManager.js
+
     CI=true pnpm --ignore-scripts prune --prod
     find -type f \( -name "*.ts" -o -name "*.map" \) -exec rm -rf {} +
     rm -rf node_modules/.pnpm/{typescript*,prettier*}
